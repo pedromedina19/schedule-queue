@@ -4,9 +4,12 @@ import { AppService } from './app.service';
 import { TweetsModule } from './tweets/tweets.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { join } from 'path';
+import { ScheduleModule } from '@nestjs/schedule';
+import { TweetsCountService } from './tweets-count/tweets-count.service';
 
 @Module({
   imports: [
+    ScheduleModule.forRoot(),
     SequelizeModule.forRoot({
       dialect: 'sqlite',
       host: join(__dirname, 'database.sqlite'),
@@ -15,6 +18,6 @@ import { join } from 'path';
     }),
     TweetsModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, TweetsCountService],
 })
 export class AppModule {}
