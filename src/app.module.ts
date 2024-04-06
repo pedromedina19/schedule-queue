@@ -5,7 +5,6 @@ import { TweetsModule } from './tweets/tweets.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { join } from 'path';
 import { ScheduleModule } from '@nestjs/schedule';
-import { TweetsCountService } from './tweets-count/tweets-count.service';
 
 @Module({
   imports: [
@@ -18,6 +17,6 @@ import { TweetsCountService } from './tweets-count/tweets-count.service';
     }),
     TweetsModule],
   controllers: [AppController],
-  providers: [AppService, TweetsCountService],
+  providers: [AppService],
 })
 export class AppModule {}
