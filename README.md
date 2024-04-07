@@ -9,4 +9,5 @@ docker-compose exec redis sh	<br>
 and then:<br>
 redis-cli	<br>
 soon after:<br>	
-```keys '*'	```<br>
+`` `bash 
+keys '*'	`` `<br>
